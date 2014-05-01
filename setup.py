@@ -2,10 +2,10 @@
 
 from distutils.core import setup
 
-description = open('README.md').read()
+description = open('README').read()
 
 setup(name='y4m',
-      version='1.1',
+      version='1.1.1',
       description='YUV4MPEG2 (.y4m) Reader/Writer',
       author='Pierre Gronlier',
       author_email='ticapix@gmail.com',
