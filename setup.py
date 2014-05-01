@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 
-description = open('README').read()
+description = open('README.md').read()
 
 setup(name='y4m',
       version='1.1.1',
