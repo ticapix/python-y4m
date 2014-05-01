@@ -3,7 +3,7 @@ YUV4MPEG2 (.y4m) Reader/Writer
 
 tested with python-2.7, python-3.3 and python3.4
 
-[Build Status](https://travis-ci.org/ticapix/simple-nosql.png?branch=master)](https://travis-ci.org/ticapix/simple-nosql)
+[![Build Status](https://travis-ci.org/ticapix/python-y4m.svg?branch=master)](https://travis-ci.org/ticapix/python-y4m)
 
 
 ```python
