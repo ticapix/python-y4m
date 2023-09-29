@@ -46,5 +46,8 @@ class Writer(object):
     def _encode_frame(self, frame):
         assert len(frame.buffer) == self._frame_size()
         data = self._encode_headers(frame.headers)
-        self._fd.write(b'FRAME ' + data + b'\n')
+        self._fd.write(b'FRAME')
+        if len(data) > 0:
+            self._fd.write(b' ' + data)
+        self._fd.write(b'\n')
         self._fd.write(frame.buffer)
