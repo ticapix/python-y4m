@@ -31,8 +31,13 @@ class Writer(object):
             self._encode_frame(frame)
 
     def _frame_size(self):
-        assert self._stream_headers['C'].startswith('420'), 'only support I420 fourcc'
-        return self._stream_headers['W'] * self._stream_headers['H'] * 3 // 2
+        if self._stream_headers['C'].startswith('420'):
+            return self._stream_headers['W'] * self._stream_headers['H'] * 3 // 2
+        elif self._stream_headers['C'].startswith('422'):
+            return self._stream_headers['W'] * self._stream_headers['H'] * 2
+        elif self._stream_headers['C'].startswith('444'):
+            return self._stream_headers['W'] * self._stream_headers['H'] * 3
+        raise f"only support I420, I422, I444 fourcc (not {self._stream_headers['C']})"
 
     def _encode_headers(self, headers):
         for k in headers.keys():
